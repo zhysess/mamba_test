@@ -3,7 +3,7 @@
 
 ## create conda environment
 
-'''
+```
 conda create -n mamba_test python=3.10.13
 conda activate mamba_test
 conda install cudatoolkit==11.8 -c nvidia
@@ -16,8 +16,8 @@ pip install .
 pip install mamba-ssm==1.2.0
 pip install spectral
 pip install scikit-learn
-'''
+```
 
-'''
+```
 python train_MambaHSI.py
-'''
+```
