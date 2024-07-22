@@ -18,6 +18,8 @@ pip install spectral
 pip install scikit-learn
 ```
 
+
+## run python code
 ```
 python train_MambaHSI.py
 ```
