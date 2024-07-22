@@ -1,0 +1,135 @@
+[32m[I 240722 12:16:19 train_MambaHSI:114](B[m ./RUNS/MambaHSI/UP
+[32m[I 240722 12:16:21 train_MambaHSI:167](B[m {'net_name': 'MambaHSI', 'dataset_index': 0, 'num_list': [30, 10], 'lr': 0.0003, 'seed_list': [0]}
+[32m[I 240722 12:16:21 train_MambaHSI:168](B[m MambaHSI(
+      (patch_embedding): Sequential(
+        (0): Conv2d(103, 128, kernel_size=(1, 1), stride=(1, 1))
+        (1): GroupNorm(4, 128, eps=1e-05, affine=True)
+        (2): SiLU()
+      )
+      (mamba): Sequential(
+        (0): BothMamba(
+          (softmax): Softmax(dim=0)
+          (spa_mamba): SpaMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=128, out_features=512, bias=False)
+              (conv1d): Conv1d(256, 256, kernel_size=(4,), stride=(1,), padding=(3,), groups=256)
+              (act): SiLU()
+              (x_proj): Linear(in_features=256, out_features=40, bias=False)
+              (dt_proj): Linear(in_features=8, out_features=256, bias=True)
+              (out_proj): Linear(in_features=256, out_features=128, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+          (spe_mamba): SpeMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=32, out_features=128, bias=False)
+              (conv1d): Conv1d(64, 64, kernel_size=(4,), stride=(1,), padding=(3,), groups=64)
+              (act): SiLU()
+              (x_proj): Linear(in_features=64, out_features=34, bias=False)
+              (dt_proj): Linear(in_features=2, out_features=64, bias=True)
+              (out_proj): Linear(in_features=64, out_features=32, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+        )
+        (1): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        (2): BothMamba(
+          (softmax): Softmax(dim=0)
+          (spa_mamba): SpaMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=128, out_features=512, bias=False)
+              (conv1d): Conv1d(256, 256, kernel_size=(4,), stride=(1,), padding=(3,), groups=256)
+              (act): SiLU()
+              (x_proj): Linear(in_features=256, out_features=40, bias=False)
+              (dt_proj): Linear(in_features=8, out_features=256, bias=True)
+              (out_proj): Linear(in_features=256, out_features=128, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+          (spe_mamba): SpeMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=32, out_features=128, bias=False)
+              (conv1d): Conv1d(64, 64, kernel_size=(4,), stride=(1,), padding=(3,), groups=64)
+              (act): SiLU()
+              (x_proj): Linear(in_features=64, out_features=34, bias=False)
+              (dt_proj): Linear(in_features=2, out_features=64, bias=True)
+              (out_proj): Linear(in_features=64, out_features=32, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+        )
+        (3): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        (4): BothMamba(
+          (softmax): Softmax(dim=0)
+          (spa_mamba): SpaMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=128, out_features=512, bias=False)
+              (conv1d): Conv1d(256, 256, kernel_size=(4,), stride=(1,), padding=(3,), groups=256)
+              (act): SiLU()
+              (x_proj): Linear(in_features=256, out_features=40, bias=False)
+              (dt_proj): Linear(in_features=8, out_features=256, bias=True)
+              (out_proj): Linear(in_features=256, out_features=128, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+          (spe_mamba): SpeMamba(
+            (mamba): Mamba(
+              (in_proj): Linear(in_features=32, out_features=128, bias=False)
+              (conv1d): Conv1d(64, 64, kernel_size=(4,), stride=(1,), padding=(3,), groups=64)
+              (act): SiLU()
+              (x_proj): Linear(in_features=64, out_features=34, bias=False)
+              (dt_proj): Linear(in_features=2, out_features=64, bias=True)
+              (out_proj): Linear(in_features=64, out_features=32, bias=False)
+            )
+            (proj): Sequential(
+              (0): GroupNorm(4, 128, eps=1e-05, affine=True)
+              (1): SiLU()
+            )
+          )
+        )
+      )
+      (cls_head): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+        (1): GroupNorm(4, 128, eps=1e-05, affine=True)
+        (2): SiLU()
+        (3): Conv2d(128, 9, kernel_size=(1, 1), stride=(1, 1))
+      )
+    )
+[32m[I 240722 12:16:21 train_MambaHSI:190](B[m Adam (
+    Parameter Group 0
+        amsgrad: False
+        betas: (0.9, 0.999)
+        capturable: False
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 0.0003
+        maximize: False
+        weight_decay: 0
+    )
+[32m[I 240722 12:16:23 train_MambaHSI:234](B[m Iter:0|loss:2.2133312225341797
+[32m[I 240722 12:16:23 train_MambaHSI:279](B[m Evaluate 0|OA:0.2111111111111111|MACC:0.2111111111111111|Kappa:0.11250000000000002|MIOU:0.10195163835514712|IOU:[0.04444444 0.         0.         0.         0.47619048 0.10526316
+     0.16666667 0.         0.125     ]|ACC:[0.2 0.  0.  0.  1.  0.2 0.2 0.  0.3]
+[32m[I 240722 12:16:25 train_MambaHSI:234](B[m Iter:1|loss:2.0282351970672607
+[32m[I 240722 12:16:25 train_MambaHSI:279](B[m Evaluate 1|OA:0.25555555555555554|MACC:0.2555555555555556|Kappa:0.1625|MIOU:0.12049817446236882|IOU:[0.13513514 0.17647059 0.         0.         0.43478261 0.16666667
+     0.1        0.         0.07142857]|ACC:[0.5 0.3 0.  0.  1.  0.3 0.1 0.  0.1]
+[32m[I 240722 12:16:27 train_MambaHSI:234](B[m Iter:2|loss:1.9370818138122559
+[32m[I 240722 12:16:27 train_MambaHSI:279](B[m Evaluate 2|OA:0.23333333333333334|MACC:0.23333333333333334|Kappa:0.1375|MIOU:0.10118217244654025|IOU:[0.         0.33333333 0.         0.         0.34482759 0.07692308
+     0.         0.05555556 0.1       ]|ACC:[0.  0.7 0.  0.  1.  0.1 0.  0.2 0.1]
+[32m[I 240722 12:16:28 train_MambaHSI:234](B[m Iter:3|loss:1.8868049383163452
